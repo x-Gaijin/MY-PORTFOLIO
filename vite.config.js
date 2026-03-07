@@ -5,6 +5,7 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 export default defineConfig({
   plugins: [basicSsl()],
   root: 'src',
+  envDir: resolve(__dirname, '.'),   // load .env files from project root, not src/
   publicDir: '../public',
   build: {
     outDir: '../dist',
