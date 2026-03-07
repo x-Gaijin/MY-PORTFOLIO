@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "node server.js"
   },
   "dependencies": {
+    "express": "^4.21.0",
     "gsap": "^3.12.5",
     "three": "^0.170.0",
-    "typed.js": "^2.1.0"
+    "typed.js": "^2.1.0",
+    "ws": "^8.17.0"
   },
   "devDependencies": {
     "@vitejs/plugin-basic-ssl": "^2.1.4",
