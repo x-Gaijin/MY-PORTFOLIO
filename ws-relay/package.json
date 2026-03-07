@@ -1,0 +1,15 @@
+{
+    "name": "ws-relay",
+    "version": "1.0.0",
+    "description": "WebSocket relay — proxies browser WS through Render to ngrok backend",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "ws": "^8.17.0"
+    },
+    "engines": {
+        "node": ">=18"
+    }
+}
