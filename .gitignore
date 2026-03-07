@@ -1,0 +1,7 @@
+node_modules/
+dist/
+
+# Environment files — keep secrets out of git
+.env.production
+.env.local
+.env.*.local

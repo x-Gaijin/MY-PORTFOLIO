@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Tristhan Cabrera — FPGA Development Projects. Digital circuit design, VHDL, Verilog, and hardware acceleration." />
+    <title>FPGA Development · Tristhan Cabrera</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-deep-space text-white font-sans">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="category-hero">
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-neon-cyan/5 rounded-full blur-[200px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-neon-violet/5 rounded-full blur-[150px] pointer-events-none">
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+            <a href="./index.html#portfolio" class="back-btn mb-8">
+                <i class='bx bx-arrow-back'></i> Back to Portfolio
+            </a>
+            <div class="flex items-center gap-3 mb-4">
+                <div
+                    class="w-14 h-14 flex items-center justify-center rounded-2xl bg-neon-cyan/10 border border-neon-cyan/20 text-neon-cyan text-2xl">
+                    <i class='bx bx-chip'></i>
+                </div>
+                <div
+                    class="flex items-center gap-2 px-3 py-1 rounded-full bg-neon-cyan/5 border border-neon-cyan/20 text-neon-cyan text-xs font-mono tracking-wider">
+                    <span class="w-1.5 h-1.5 rounded-full bg-neon-cyan animate-pulse"></span>
+                    FPGA
+                </div>
+            </div>
+            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
+                <span class="text-white">FPGA</span>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-violet">
+                    Development</span>
+            </h1>
+            <p class="text-white/50 text-lg md:text-xl max-w-3xl leading-relaxed">
+                Designing and implementing digital circuits using VHDL and Verilog on FPGA platforms.
+                From real-time signal processing to hardware acceleration, these projects explore the power of
+                reconfigurable computing and low-level hardware design.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══ PROJECTS ═══ -->
+    <section class="relative py-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid"></div>
+        </div>
+    </section>
+
+    <footer class="relative border-t border-white/[0.05] py-8">
+        <div
+            class="max-w-full mx-auto px-6 lg:px-16 xl:px-24 flex flex-col md:flex-row items-center justify-center gap-4">
+            <p class="text-white/30 text-sm">Developed by <span class="text-neon-cyan/60">Tristhan Cabrera</span> © 2026
+            </p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import './styles/main.css';
+        import { renderProjectCards, initPortfolioPage } from './modules/PortfolioPage.js';
+
+        const projects = [
+            {
+                title: 'LED Matrix Controller',
+                description: 'Custom FPGA-based LED matrix driver with real-time pattern generation and animation sequencing. Implemented shift-register cascading for large-scale displays.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['VHDL', 'Xilinx Vivado', 'Artix-7'],
+                features: ['Real-time pattern generation', 'Shift-register cascading for 64x64 matrix', 'Configurable animation timing', 'SPI communication interface'],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'Digital Signal Processor',
+                description: 'Pipelined DSP core implemented on FPGA for audio signal filtering. Includes FIR and IIR filter implementations with configurable coefficients.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Verilog', 'ModelSim', 'Quartus'],
+                features: ['Pipelined architecture for high throughput', 'Configurable FIR/IIR filter coefficients', 'Real-time audio processing at 48kHz', 'Resource-optimized design'],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'UART Communication Module',
+                description: 'Full-duplex UART transceiver with configurable baud rate, parity checking, and FIFO buffering for reliable serial communication.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['VHDL', 'Xilinx Vivado', 'Testbench'],
+                features: ['Configurable baud rate (9600-115200)', 'Parity checking and error detection', '16-byte FIFO TX/RX buffers', 'Comprehensive testbench simulation'],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'VGA Display Controller',
+                description: 'FPGA-based VGA signal generator supporting 640x480 resolution. Renders shapes, text, and basic animations with pixel-level control and double buffering.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Verilog', 'VGA Protocol', 'Xilinx'],
+                features: ['640x480 @ 60Hz VGA output', 'Pixel-level rendering engine', 'Double buffering for smooth animation', 'Character ROM for text display'],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'SPI Flash Memory Interface',
+                description: 'Hardware interface for reading/writing to SPI flash memory chips on FPGA. Implements the full SPI protocol with DMA-style data transfer for high throughput.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['VHDL', 'SPI Protocol', 'Quartus'],
+                features: ['Full SPI master implementation', 'Sector erase and page write support', 'DMA-style burst transfers', 'Status register polling'],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'PWM Motor Controller',
+                description: 'Multi-channel PWM generator for DC motor speed control. Features configurable duty cycle, frequency, and direction control with encoder feedback for closed-loop operation.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Verilog', 'PWM', 'Encoder', 'FPGA'],
+                features: ['4-channel independent PWM output', 'Quadrature encoder feedback', 'PID control loop in hardware', 'Configurable frequency 1kHz-100kHz'],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjectCards(projects, 'projects-grid');
+            initPortfolioPage();
+        });
+    </script>
+</body>
+
+</html>

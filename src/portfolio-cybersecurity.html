@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Tristhan Cabrera — Cybersecurity Projects. Network security, penetration testing, vulnerability assessment, and secure system design." />
+    <title>Cybersecurity · Tristhan Cabrera</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-deep-space text-white font-sans">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="category-hero">
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-neon-blue/5 rounded-full blur-[200px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-neon-cyan/5 rounded-full blur-[150px] pointer-events-none">
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+            <a href="./index.html#portfolio" class="back-btn mb-8">
+                <i class='bx bx-arrow-back'></i> Back to Portfolio
+            </a>
+
+            <div class="flex items-center gap-3 mb-4">
+                <div
+                    class="w-14 h-14 flex items-center justify-center rounded-2xl bg-neon-blue/10 border border-neon-blue/20 text-neon-blue text-2xl">
+                    <i class='bx bx-shield-quarter'></i>
+                </div>
+                <div
+                    class="flex items-center gap-2 px-3 py-1 rounded-full bg-neon-blue/5 border border-neon-blue/20 text-neon-blue text-xs font-mono tracking-wider">
+                    <span class="w-1.5 h-1.5 rounded-full bg-neon-blue animate-pulse"></span>
+                    CYBERSECURITY
+                </div>
+            </div>
+
+            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
+                <span class="text-white">Cyber</span>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-neon-cyan to-neon-violet">security</span>
+            </h1>
+
+            <p class="text-white/50 text-lg md:text-xl max-w-3xl leading-relaxed">
+                Exploring offensive and defensive cybersecurity practices. From network analysis and
+                penetration testing to building hardened systems and security automation tools.
+                These projects demonstrate hands-on experience with real-world security challenges.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══ PROJECTS ═══ -->
+    <section class="relative py-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid"></div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="relative border-t border-white/[0.05] py-8">
+        <div
+            class="max-w-full mx-auto px-6 lg:px-16 xl:px-24 flex flex-col md:flex-row items-center justify-center gap-4">
+            <p class="text-white/30 text-sm">Developed by <span class="text-neon-cyan/60">Tristhan Cabrera</span> © 2026
+            </p>
+        </div>
+    </footer>
+
+    <!-- ═══ ENTRY POINT ═══ -->
+    <script type="module">
+        import './styles/main.css';
+        import { renderProjectCards, initPortfolioPage } from './modules/PortfolioPage.js';
+
+        const projects = [
+            {
+                title: 'Network Intrusion Detection System',
+                description: 'Custom IDS built with Python and Scapy that monitors network traffic in real-time, detecting anomalies, port scans, and suspicious patterns using rule-based and statistical analysis.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Python', 'Scapy', 'Wireshark', 'Linux'],
+                features: [
+                    'Real-time packet capture and analysis',
+                    'Rule-based anomaly detection engine',
+                    'Alert system with severity classification',
+                    'Dashboard for traffic visualization',
+                ],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'Vulnerability Scanner',
+                description: 'Automated vulnerability assessment tool that scans web applications for common security flaws including SQL injection, XSS, CSRF, and misconfigured headers.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Python', 'Nmap', 'OWASP', 'Burp Suite'],
+                features: [
+                    'Automated web application scanning',
+                    'SQL injection & XSS detection',
+                    'Report generation in PDF/HTML',
+                    'OWASP Top 10 compliance check',
+                ],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'Password Cracking Lab',
+                description: 'Educational lab environment for studying password security. Implements and compares various hash-cracking techniques including dictionary, brute-force, and rainbow table attacks.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Python', 'Hashcat', 'John the Ripper', 'Kali'],
+                features: [
+                    'Multiple attack vector demonstrations',
+                    'Hash identification and analysis',
+                    'Password strength evaluator',
+                    'Comparative performance benchmarks',
+                ],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'Secure File Transfer System',
+                description: 'End-to-end encrypted file transfer application using AES-256 and RSA key exchange. Ensures data integrity with SHA-256 checksums and supports secure authentication.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Python', 'OpenSSL', 'AES-256', 'RSA'],
+                features: [
+                    'AES-256 file encryption',
+                    'RSA key exchange protocol',
+                    'SHA-256 integrity verification',
+                    'Secure user authentication',
+                ],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'Firewall Rule Analyzer',
+                description: 'Tool for analyzing and optimizing firewall rule sets. Detects redundant rules, identifies security gaps, and suggests improvements for iptables/nftables configurations.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Python', 'iptables', 'nftables', 'Linux'],
+                features: [
+                    'Rule conflict detection',
+                    'Redundancy analysis and cleanup',
+                    'Security gap identification',
+                    'Configuration optimization suggestions',
+                ],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'Packet Sniffer & Analyzer',
+                description: 'Low-level network packet sniffer that captures and decodes Ethernet, IP, TCP, UDP, and HTTP traffic. Provides real-time protocol analysis and traffic statistics.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Python', 'Raw Sockets', 'Wireshark', 'TCP/IP'],
+                features: [
+                    'Raw socket packet capture',
+                    'Multi-protocol decoder (L2-L7)',
+                    'Live traffic statistics dashboard',
+                    'PCAP export for Wireshark analysis',
+                ],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjectCards(projects, 'projects-grid');
+            initPortfolioPage();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Tristhan Cabrera — AI & Automation Projects. AI agents, speech-to-speech systems, RAG pipelines, and intelligent automation." />
+    <title>AI & Automation · Tristhan Cabrera</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-deep-space text-white font-sans">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="category-hero">
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-neon-pink/5 rounded-full blur-[200px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-neon-violet/5 rounded-full blur-[150px] pointer-events-none">
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+            <a href="./index.html#portfolio" class="back-btn mb-8">
+                <i class='bx bx-arrow-back'></i> Back to Portfolio
+            </a>
+            <div class="flex items-center gap-3 mb-4">
+                <div
+                    class="w-14 h-14 flex items-center justify-center rounded-2xl bg-neon-pink/10 border border-neon-pink/20 text-neon-pink text-2xl">
+                    <i class='bx bx-bot'></i>
+                </div>
+                <div
+                    class="flex items-center gap-2 px-3 py-1 rounded-full bg-neon-pink/5 border border-neon-pink/20 text-neon-pink text-xs font-mono tracking-wider">
+                    <span class="w-1.5 h-1.5 rounded-full bg-neon-pink animate-pulse"></span>
+                    AI & AUTOMATION
+                </div>
+            </div>
+            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
+                <span class="text-white">AI &</span>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink via-neon-violet to-neon-blue">
+                    Automation</span>
+            </h1>
+            <p class="text-white/50 text-lg md:text-xl max-w-3xl leading-relaxed">
+                Building intelligent systems that automate, learn, and adapt. From speech-to-speech AI assistants
+                to local RAG pipelines and autonomous email management — all running locally without paid APIs.
+                These projects bridge the gap between AI capability and real-world utility.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══ PROJECTS ═══ -->
+    <section class="relative py-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid"></div>
+        </div>
+    </section>
+
+    <footer class="relative border-t border-white/[0.05] py-8">
+        <div
+            class="max-w-full mx-auto px-6 lg:px-16 xl:px-24 flex flex-col md:flex-row items-center justify-center gap-4">
+            <p class="text-white/30 text-sm">Developed by <span class="text-neon-cyan/60">Tristhan Cabrera</span> © 2026
+            </p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import './styles/main.css';
+        import { renderProjectCards, initPortfolioPage } from './modules/PortfolioPage.js';
+
+        const projects = [
+            {
+                title: 'Speech-to-Speech AI Assistant',
+                description: 'Fully local AI voice assistant using Whisper for STT, LM Studio for inference, and Piper for TTS. Real-time conversation with sub-second latency on consumer hardware.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Python', 'Whisper', 'LM Studio', 'Piper TTS'],
+                features: ['End-to-end local processing (no cloud APIs)', 'Real-time STT with Whisper', 'Context-aware conversation via LLM', 'Natural TTS output with Piper'],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'Local RAG Knowledge Base',
+                description: 'Retrieval-Augmented Generation pipeline for querying personal documents. Embeds and indexes documents locally for privacy-first intelligent search and Q&A.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Python', 'LangChain', 'ChromaDB', 'LLM'],
+                features: ['Document embedding & vector storage', 'Semantic search across document library', 'Context-aware answer generation', 'Supports PDF, TXT, DOCX formats'],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'AI Email Automation Agent',
+                description: 'Autonomous agent that reads, classifies, and drafts email responses using local LLMs. Integrates with IMAP/SMTP for seamless inbox management without human intervention.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Python', 'IMAP', 'LLM', 'Automation'],
+                features: ['Automatic email classification & routing', 'AI-drafted response suggestions', 'Priority inbox management', 'Scheduled batch processing'],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'AI-Powered Code Reviewer',
+                description: 'Local code review assistant that analyzes pull requests and code changes using LLMs. Detects bugs, suggests improvements, and enforces coding standards automatically.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Python', 'LLM', 'Git API', 'AST Parser'],
+                features: ['Automated code quality analysis', 'Bug detection and fix suggestions', 'Coding standard enforcement', 'Git integration for PR reviews'],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'Document Summarizer Pipeline',
+                description: 'Automated pipeline for summarizing long documents, research papers, and reports. Uses chunking strategies and LLM chaining for accurate, coherent summaries.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Python', 'LangChain', 'LLM', 'PDF Parser'],
+                features: ['Multi-document summarization', 'Configurable summary length', 'Key points extraction', 'Supports academic paper formatting'],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'Smart Task Scheduler',
+                description: 'AI-driven task scheduling agent that prioritizes and organizes daily tasks based on deadlines, dependencies, and estimated effort. Learns from user behavior patterns.',
+                thumbnail: './assets/FPGA.jpg',
+                tech: ['Python', 'LLM', 'SQLite', 'Scheduling'],
+                features: ['Intelligent priority scoring', 'Dependency-aware scheduling', 'Behavioral pattern learning', 'Calendar integration'],
+                images: ['./assets/FPGA.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjectCards(projects, 'projects-grid');
+            initPortfolioPage();
+        });
+    </script>
+</body>
+
+</html>

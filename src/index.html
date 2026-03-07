@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Tristhan Cabrera — Computer Engineering Portfolio. AI-powered, cyberpunk-inspired engineering showcase." />
+    <title>Tristhan Cabrera · Engineering Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-deep-space text-white font-sans">
+
+    <!-- ═══ PRELOADER ═══ -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <span class="preloader-logo-text">My Portfolio</span>
+                <span class="preloader-logo-dot">.</span>
+            </div>
+            <div class="preloader-bar-track">
+                <div class="preloader-bar-fill" id="preloader-bar"></div>
+            </div>
+            <p class="preloader-tagline">Engineering the Future</p>
+        </div>
+        <!-- Animated grid background -->
+        <div class="preloader-grid"></div>
+    </div>
+
+    <!-- ═══ THREE.JS CANVAS ═══ -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- ═══ NAVBAR ═══ -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+        <div class="max-w-full mx-auto px-6 lg:px-16 xl:px-24 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#home" class="font-display text-2xl font-bold tracking-tight group">
+                <span class="text-white group-hover:text-neon-cyan transition-colors duration-300">My
+                    Portfolio</span><span class="text-neon-cyan">.</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav id="nav-links" class="hidden md:flex items-center gap-1">
+                <a href="#home"
+                    class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-white/70 hover:text-neon-cyan hover:bg-white/[0.04] transition-all duration-300">Home</a>
+                <a href="#about"
+                    class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-white/70 hover:text-neon-cyan hover:bg-white/[0.04] transition-all duration-300">About</a>
+                <a href="#services"
+                    class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-white/70 hover:text-neon-cyan hover:bg-white/[0.04] transition-all duration-300">Services</a>
+                <a href="#skills"
+                    class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-white/70 hover:text-neon-cyan hover:bg-white/[0.04] transition-all duration-300">Skills</a>
+                <a href="#portfolio"
+                    class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-white/70 hover:text-neon-cyan hover:bg-white/[0.04] transition-all duration-300">Portfolio</a>
+                <a href="#contact"
+                    class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-white/70 hover:text-neon-cyan hover:bg-white/[0.04] transition-all duration-300">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-toggle"
+                class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-white/70 hover:text-neon-cyan transition-colors">
+                <i class='bx bx-menu text-xl'></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="md:hidden hidden absolute top-20 left-0 w-full glass-panel rounded-none border-x-0 border-t-0 py-4">
+            <nav class="flex flex-col items-center gap-2 px-6">
+                <a href="#home"
+                    class="mobile-link w-full text-center py-3 rounded-xl text-sm font-medium text-white/70 hover:text-neon-cyan hover:bg-white/[0.04] transition-all">Home</a>
+                <a href="#about"
+                    class="mobile-link w-full text-center py-3 rounded-xl text-sm font-medium text-white/70 hover:text-neon-cyan hover:bg-white/[0.04] transition-all">About</a>
+                <a href="#services"
+                    class="mobile-link w-full text-center py-3 rounded-xl text-sm font-medium text-white/70 hover:text-neon-cyan hover:bg-white/[0.04] transition-all">Services</a>
+                <a href="#skills"
+                    class="mobile-link w-full text-center py-3 rounded-xl text-sm font-medium text-white/70 hover:text-neon-cyan hover:bg-white/[0.04] transition-all">Skills</a>
+                <a href="#portfolio"
+                    class="mobile-link w-full text-center py-3 rounded-xl text-sm font-medium text-white/70 hover:text-neon-cyan hover:bg-white/[0.04] transition-all">Portfolio</a>
+                <a href="#contact"
+                    class="mobile-link w-full text-center py-3 rounded-xl text-sm font-medium text-white/70 hover:text-neon-cyan hover:bg-white/[0.04] transition-all">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- ═══════════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════════ -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Gradient Orbs -->
+        <div class="absolute top-1/4 -left-32 w-96 h-96 bg-neon-cyan/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-1/4 -right-32 w-96 h-96 bg-neon-violet/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left: Text Content -->
+                <div>
+                    <!-- Tag -->
+                    <div
+                        class="reveal-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neon-cyan/5 border border-neon-cyan/20 text-neon-cyan text-xs font-mono tracking-wider mb-8">
+                        <span class="w-1.5 h-1.5 rounded-full bg-neon-cyan animate-pulse"></span>
+                        SYSTEM ONLINE
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h3 class="reveal-up font-display text-xl md:text-2xl text-white/60 font-light mb-2">Hello, It's Me
+                    </h3>
+                    <h1
+                        class="reveal-up font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4">
+                        <span class="text-white">Tristhan</span><br />
+                        <span class="text-gradient">Cabrera</span>
+                    </h1>
+
+                    <!-- Typed Text -->
+                    <h3 class="reveal-up text-xl md:text-2xl text-white/60 font-light mb-6">
+                        And I'm a <span id="typed-output" class="text-neon-cyan glow-text font-semibold"></span>
+                    </h3>
+
+                    <!-- Description -->
+                    <p class="reveal-up text-base md:text-lg text-white/50 leading-relaxed max-w-xl mb-10">
+                        A Computer Engineer specializing in AI, automation, and hardware integration.
+                        Passionate about building innovative systems, solving real-world problems, and creating
+                        technology-driven solutions.
+                    </p>
+
+                    <!-- Social Links -->
+                    <div class="reveal-up flex items-center gap-4 mb-8">
+                        <a href="https://www.facebook.com/trsthncabrera" target="_blank" rel="noopener"
+                            class="w-11 h-11 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-white/60 hover:text-neon-cyan hover:border-neon-cyan/40 hover:shadow-neon transition-all duration-300">
+                            <i class='bx bxl-facebook text-lg'></i>
+                        </a>
+                        <a href="https://www.instagram.com/x.gaijin/#" target="_blank" rel="noopener"
+                            class="w-11 h-11 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-white/60 hover:text-neon-cyan hover:border-neon-cyan/40 hover:shadow-neon transition-all duration-300">
+                            <i class='bx bxl-instagram text-lg'></i>
+                        </a>
+                        <a href="https://github.com/x-Gaijin" target="_blank" rel="noopener"
+                            class="w-11 h-11 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-white/60 hover:text-neon-cyan hover:border-neon-cyan/40 hover:shadow-neon transition-all duration-300">
+                            <i class='bx bxl-github text-lg'></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@goofykid_tristhan" target="_blank" rel="noopener"
+                            class="w-11 h-11 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-white/60 hover:text-neon-cyan hover:border-neon-cyan/40 hover:shadow-neon transition-all duration-300">
+                            <i class='bx bxl-tiktok text-lg'></i>
+                        </a>
+                    </div>
+
+                    <!-- CTA -->
+                    <a href="#about" class="reveal-up btn-neon">
+                        <span>Explore More</span>
+                        <i class='bx bx-chevron-down text-lg'></i>
+                    </a>
+                </div>
+
+                <!-- Right: Profile Image -->
+                <div class="reveal-right flex justify-center lg:justify-end">
+                    <div class="relative group">
+                        <!-- Background glow ring -->
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-br from-neon-cyan/20 via-neon-violet/10 to-neon-cyan/20 rounded-full blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700 animate-glow-pulse">
+                        </div>
+                        <!-- Outer gradient border ring -->
+                        <div
+                            class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full p-1 bg-gradient-to-br from-neon-cyan via-neon-violet to-neon-cyan">
+                            <div class="w-full h-full rounded-full overflow-hidden border-4 border-deep-space">
+                                <img src="./assets/pic.png" alt="Tristhan Cabrera"
+                                    class="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700" />
+                            </div>
+                        </div>
+                        <!-- Floating tech badge -->
+                        <div
+                            class="absolute -bottom-2 -right-2 px-4 py-2 glass-panel-sm text-xs font-mono text-neon-cyan flex items-center gap-2 animate-float">
+                            <span class="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></span>
+                            Computer Engineer
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/20">
+            <span class="text-[10px] font-mono tracking-[0.3em] uppercase">Scroll</span>
+            <div class="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center p-1">
+                <div class="w-1 h-2 rounded-full bg-neon-cyan animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+       ABOUT SECTION
+       ═══════════════════════════════════════════ -->
+    <section id="about" class="relative py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+                <!-- Image -->
+                <div class="reveal-left perspective-800">
+                    <div id="about-image" class="relative group cursor-pointer">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-neon-cyan/20 via-neon-violet/20 to-neon-cyan/20 rounded-3xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <img src="./assets/resize.png" alt="Tristhan Cabrera"
+                            class="relative w-full max-w-md mx-auto rounded-3xl border border-white/10 shadow-glass-lg"
+                            style="will-change: transform;" />
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div>
+                    <h2 class="reveal-right section-title mb-2">About <span>Me</span></h2>
+                    <h4 class="reveal-right text-xl text-neon-cyan/80 font-display font-medium mb-6">Computer
+                        Engineer!</h4>
+                    <p class="reveal-right text-white/50 text-base md:text-lg leading-relaxed mb-8">
+                        I am a Computer Engineer passionate about technology, AI, automation, and innovation.
+                        With hands-on experience in hardware-software integration, AI agents, and local automation
+                        systems,
+                        I enjoy solving complex problems and bringing ideas to life. Whether developing AI-driven
+                        solutions,
+                        designing circuits, or optimizing systems, I am always eager to learn, innovate, and push
+                        technological boundaries.
+                    </p>
+                    <a href="https://www.facebook.com/trsthncabrera" target="_blank" rel="noopener"
+                        class="reveal-right btn-neon">
+                        <span>More About Me</span>
+                        <i class='bx bx-right-arrow-alt text-lg'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+       SERVICES SECTION
+       ═══════════════════════════════════════════ -->
+    <section id="services" class="relative py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="text-center mb-20">
+                <h2 class="reveal-up section-title">My <span>Services</span></h2>
+                <p class="reveal-up text-white/40 text-lg max-w-xl mx-auto mt-4">Crafting solutions at the intersection
+                    of hardware, software, and creativity.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1: Coder -->
+                <div class="reveal-up floating-card neon-border group">
+                    <div
+                        class="w-14 h-14 flex items-center justify-center rounded-2xl bg-neon-cyan/10 text-neon-cyan text-2xl mb-6 group-hover:shadow-neon transition-shadow duration-500">
+                        <i class='bx bx-code'></i>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-white mb-3">Software Development</h3>
+                    <p class="text-white/40 text-sm leading-relaxed mb-6">
+                        Computer Engineer with experience in C++, Java, and Python.
+                        Integrating creative and logical problem-solving approaches for versatile solutions in both
+                        multimedia and programming fields.
+                    </p>
+                    <a href="#"
+                        class="inline-flex items-center gap-1.5 text-neon-cyan text-sm font-medium hover:gap-3 transition-all duration-300">
+                        Learn More <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                </div>
+
+                <!-- Service 2: Electronics -->
+                <div class="reveal-up floating-card neon-border group" style="animation-delay: 0.1s;">
+                    <div
+                        class="w-14 h-14 flex items-center justify-center rounded-2xl bg-neon-violet/10 text-neon-violet text-2xl mb-6 group-hover:shadow-neon-violet transition-shadow duration-500">
+                        <i class='bx bx-chip'></i>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-white mb-3">Electronics & Circuit Design</h3>
+                    <p class="text-white/40 text-sm leading-relaxed mb-6">
+                        Experience in circuit design and embedded systems with Arduino, FPGA, and ESP32.
+                        Building and programming electronic projects, integrating hardware and software for innovative
+                        IoT and automation solutions.
+                    </p>
+                    <a href="#"
+                        class="inline-flex items-center gap-1.5 text-neon-violet text-sm font-medium hover:gap-3 transition-all duration-300">
+                        Learn More <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                </div>
+
+                <!-- Service 3: Video Editing -->
+                <div class="reveal-up floating-card neon-border group" style="animation-delay: 0.2s;">
+                    <div
+                        class="w-14 h-14 flex items-center justify-center rounded-2xl bg-neon-pink/10 text-neon-pink text-2xl mb-6 group-hover:shadow-[0_0_15px_rgba(236,72,153,0.2)] transition-shadow duration-500">
+                        <i class='bx bx-bot'></i>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-white mb-3">Artificial Intelligence & Automation
+                    </h3>
+                    <p class="text-white/40 text-sm leading-relaxed mb-6">
+                        Skilled in developing AI agents, speech-to-speech AI, and local RAG systems.
+                        Experienced in creating fully local AI workflows for automation, email management,
+                        and intelligent assistants without relying on paid APIs. Passionate about designing AI-driven
+                        solutions that bridge software and hardware, enabling practical, real-world impact.
+                    </p>
+                    <a href="#"
+                        class="inline-flex items-center gap-1.5 text-neon-pink text-sm font-medium hover:gap-3 transition-all duration-300">
+                        Learn More <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+       SKILLS SECTION
+       ═══════════════════════════════════════════ -->
+    <section id="skills" class="relative py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="text-center mb-20">
+                <h2 class="reveal-up section-title">My <span>Skills</span></h2>
+                <p class="reveal-up text-white/40 text-lg max-w-xl mx-auto mt-4">Technical proficiency and professional
+                    capabilities.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+                <!-- Technical Skills -->
+                <div class="reveal-left">
+                    <h3 class="font-display text-2xl font-semibold text-white mb-10 flex items-center gap-3">
+                        <span class="w-8 h-[2px] bg-gradient-to-r from-neon-cyan to-transparent"></span>
+                        Technical Skills
+                    </h3>
+
+                    <div class="space-y-8" id="tech-skills">
+                        <!-- HTML -->
+                        <div class="skill-bar" data-percent="30">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center gap-3">
+                                    <i class='bx bxl-html5 text-xl text-orange-400'></i>
+                                    <span class="text-sm font-medium text-white/70">HTML</span>
+                                </div>
+                                <span class="skill-percent text-xs font-mono text-neon-cyan/70">0%</span>
+                            </div>
+                            <div class="w-full h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
+                                <div class="progress-fill" style="width: 30%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- CSS -->
+                        <div class="skill-bar" data-percent="30">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center gap-3">
+                                    <i class='bx bxl-css3 text-xl text-blue-400'></i>
+                                    <span class="text-sm font-medium text-white/70">CSS</span>
+                                </div>
+                                <span class="skill-percent text-xs font-mono text-neon-cyan/70">0%</span>
+                            </div>
+                            <div class="w-full h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
+                                <div class="progress-fill" style="width: 30%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- JavaScript -->
+                        <div class="skill-bar" data-percent="50">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center gap-3">
+                                    <i class='bx bxl-javascript text-xl text-yellow-400'></i>
+                                    <span class="text-sm font-medium text-white/70">JavaScript</span>
+                                </div>
+                                <span class="skill-percent text-xs font-mono text-neon-cyan/70">0%</span>
+                            </div>
+                            <div class="w-full h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
+                                <div class="progress-fill" style="width: 50%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- AI & Automation -->
+                        <div class="skill-bar" data-percent="90">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center gap-3">
+                                    <i class='bx bx-bot text-xl text-pink-400'></i>
+                                    <span class="text-sm font-medium text-white/70">AI & Automation</span>
+                                </div>
+                                <span class="skill-percent text-xs font-mono text-neon-cyan/70">0%</span>
+                            </div>
+                            <div class="w-full h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Python -->
+                        <div class="skill-bar" data-percent="60">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center gap-3">
+                                    <i class='bx bxl-python text-xl text-purple-400'></i>
+                                    <span class="text-sm font-medium text-white/70">Python</span>
+                                </div>
+                                <span class="skill-percent text-xs font-mono text-neon-cyan/70">0%</span>
+                            </div>
+                            <div class="w-full h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
+                                <div class="progress-fill" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Skills (Radial) -->
+                <div class="reveal-right">
+                    <h3 class="font-display text-2xl font-semibold text-white mb-10 flex items-center gap-3">
+                        <span class="w-8 h-[2px] bg-gradient-to-r from-neon-violet to-transparent"></span>
+                        Professional Skills
+                    </h3>
+
+                    <!-- SVG Gradient Definition -->
+                    <svg class="absolute w-0 h-0">
+                        <defs>
+                            <linearGradient id="neon-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#00f0ff" />
+                                <stop offset="100%" stop-color="#8b5cf6" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <div class="grid grid-cols-2 gap-8" id="radial-skills">
+                        <!-- Communication 80% -->
+                        <div class="radial-skill flex flex-col items-center" data-percent="80">
+                            <div class="relative w-28 h-28 mb-3">
+                                <svg class="w-full h-full -rotate-90" viewBox="0 0 200 200">
+                                    <circle class="radial-track" cx="100" cy="100" r="80"></circle>
+                                    <circle class="radial-fill" cx="100" cy="100" r="80" data-offset="100"></circle>
+                                </svg>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span class="radial-percent font-display text-lg font-bold text-white">0%</span>
+                                </div>
+                            </div>
+                            <span class="text-sm text-white/50 font-medium">Communication</span>
+                        </div>
+
+                        <!-- Creativity 90% -->
+                        <div class="radial-skill flex flex-col items-center" data-percent="90">
+                            <div class="relative w-28 h-28 mb-3">
+                                <svg class="w-full h-full -rotate-90" viewBox="0 0 200 200">
+                                    <circle class="radial-track" cx="100" cy="100" r="80"></circle>
+                                    <circle class="radial-fill" cx="100" cy="100" r="80" data-offset="50"></circle>
+                                </svg>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span class="radial-percent font-display text-lg font-bold text-white">0%</span>
+                                </div>
+                            </div>
+                            <span class="text-sm text-white/50 font-medium">Creativity</span>
+                        </div>
+
+                        <!-- Problem Solving 60% -->
+                        <div class="radial-skill flex flex-col items-center" data-percent="90">
+                            <div class="relative w-28 h-28 mb-3">
+                                <svg class="w-full h-full -rotate-90" viewBox="0 0 200 200">
+                                    <circle class="radial-track" cx="100" cy="100" r="80"></circle>
+                                    <circle class="radial-fill" cx="100" cy="100" r="80" data-offset="200"></circle>
+                                </svg>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span class="radial-percent font-display text-lg font-bold text-white">0%</span>
+                                </div>
+                            </div>
+                            <span class="text-sm text-white/50 font-medium">Problem Solving</span>
+                        </div>
+
+                        <!-- Teamwork 90% -->
+                        <div class="radial-skill flex flex-col items-center" data-percent="90">
+                            <div class="relative w-28 h-28 mb-3">
+                                <svg class="w-full h-full -rotate-90" viewBox="0 0 200 200">
+                                    <circle class="radial-track" cx="100" cy="100" r="80"></circle>
+                                    <circle class="radial-fill" cx="100" cy="100" r="80" data-offset="50"></circle>
+                                </svg>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span class="radial-percent font-display text-lg font-bold text-white">0%</span>
+                                </div>
+                            </div>
+                            <span class="text-sm text-white/50 font-medium">Teamwork</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+       PORTFOLIO SECTION
+       ═══════════════════════════════════════════ -->
+    <section id="portfolio" class="relative py-32 overflow-hidden">
+        <!-- Background accents -->
+        <div
+            class="absolute top-20 -right-40 w-[500px] h-[500px] bg-neon-violet/5 rounded-full blur-[150px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-20 -left-40 w-[500px] h-[500px] bg-neon-cyan/5 rounded-full blur-[150px] pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <!-- Section Header -->
+            <div class="text-center mb-20">
+                <div
+                    class="reveal-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neon-violet/5 border border-neon-violet/20 text-neon-violet text-xs font-mono tracking-wider mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-neon-violet animate-pulse"></span>
+                    PORTFOLIO
+                </div>
+                <h2 class="reveal-up section-title">Engineering <span>Portfolio</span></h2>
+                <p class="reveal-up text-white/40 text-lg max-w-2xl mx-auto mt-4">Explore my work across hardware,
+                    software, and creative domains.
+                    Click a category to dive deeper into the projects.</p>
+            </div>
+
+            <!-- Category Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="portfolio-grid">
+
+                <!-- Category: AI & Automation -->
+                <a href="./portfolio-ai.html" class="reveal-up category-card group" style="animation-delay:0.2s">
+                    <div class="category-card-glow category-card-glow--pink group-hover:opacity-100"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-start justify-between mb-6">
+                            <div
+                                class="w-16 h-16 flex items-center justify-center rounded-2xl bg-neon-pink/10 border border-neon-pink/20 text-neon-pink text-3xl group-hover:shadow-[0_0_15px_rgba(236,72,153,0.3)] group-hover:scale-110 transition-all duration-500">
+                                <i class='bx bx-bot'></i>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-white/40 text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-neon-pink"></span>
+                                6 Projects
+                            </div>
+                        </div>
+                        <h3
+                            class="font-display text-2xl font-bold text-white mb-3 group-hover:text-neon-pink transition-colors duration-300">
+                            AI & Automation</h3>
+                        <p class="text-white/40 text-sm leading-relaxed mb-6">AI agents, speech-to-speech systems, local
+                            RAG pipelines, and fully automated workflows. Building intelligent assistants without paid
+                            APIs.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">LLMs</span>
+                            <span class="tech-badge">RAG</span>
+                            <span class="tech-badge">TTS/STT</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 text-neon-pink text-sm font-medium group-hover:gap-4 transition-all duration-300">
+                            Explore Projects <i class='bx bx-right-arrow-alt text-lg'></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Category: Arduino & IoT -->
+                <a href="./portfolio-arduino.html" class="reveal-up category-card group" style="animation-delay:0.1s">
+                    <div class="category-card-glow category-card-glow--violet group-hover:opacity-100"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-start justify-between mb-6">
+                            <div
+                                class="w-16 h-16 flex items-center justify-center rounded-2xl bg-neon-violet/10 border border-neon-violet/20 text-neon-violet text-3xl group-hover:shadow-neon-violet group-hover:scale-110 transition-all duration-500">
+                                <i class='bx bx-microchip'></i>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-white/40 text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-neon-violet"></span>
+                                6 Projects
+                            </div>
+                        </div>
+                        <h3
+                            class="font-display text-2xl font-bold text-white mb-3 group-hover:text-neon-violet transition-colors duration-300">
+                            Arduino & IoT</h3>
+                        <p class="text-white/40 text-sm leading-relaxed mb-6">Circuit prototyping, embedded C/C++
+                            programming, sensor integration, actuator control, and wireless communication with WiFi,
+                            Bluetooth, and ESP32.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-badge">Arduino</span>
+                            <span class="tech-badge">ESP32</span>
+                            <span class="tech-badge">C/C++</span>
+                            <span class="tech-badge">IoT</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 text-neon-violet text-sm font-medium group-hover:gap-4 transition-all duration-300">
+                            Explore Projects <i class='bx bx-right-arrow-alt text-lg'></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Category: FPGA -->
+                <a href="./portfolio-fpga.html" class="reveal-up category-card group">
+                    <div class="category-card-glow group-hover:opacity-100"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-start justify-between mb-6">
+                            <div
+                                class="w-16 h-16 flex items-center justify-center rounded-2xl bg-neon-cyan/10 border border-neon-cyan/20 text-neon-cyan text-3xl group-hover:shadow-neon group-hover:scale-110 transition-all duration-500">
+                                <i class='bx bx-chip'></i>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-white/40 text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-neon-cyan"></span>
+                                6 Projects
+                            </div>
+                        </div>
+                        <h3
+                            class="font-display text-2xl font-bold text-white mb-3 group-hover:text-neon-cyan transition-colors duration-300">
+                            FPGA Development</h3>
+                        <p class="text-white/40 text-sm leading-relaxed mb-6">Digital circuit design using VHDL/Verilog,
+                            real-time signal processing, hardware acceleration, and peripheral interfacing on Xilinx &
+                            Altera platforms.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-badge">VHDL</span>
+                            <span class="tech-badge">Verilog</span>
+                            <span class="tech-badge">Xilinx Vivado</span>
+                            <span class="tech-badge">ModelSim</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 text-neon-cyan text-sm font-medium group-hover:gap-4 transition-all duration-300">
+                            Explore Projects <i class='bx bx-right-arrow-alt text-lg'></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Category: Cybersecurity -->
+                <a href="./portfolio-cybersecurity.html" class="reveal-up category-card group"
+                    style="animation-delay:0.3s">
+                    <div class="category-card-glow category-card-glow--blue group-hover:opacity-100"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-start justify-between mb-6">
+                            <div
+                                class="w-16 h-16 flex items-center justify-center rounded-2xl bg-neon-blue/10 border border-neon-blue/20 text-neon-blue text-3xl group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] group-hover:scale-110 transition-all duration-500">
+                                <i class='bx bx-shield-quarter'></i>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-white/40 text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-neon-blue"></span>
+                                6 Projects
+                            </div>
+                        </div>
+                        <h3
+                            class="font-display text-2xl font-bold text-white mb-3 group-hover:text-neon-blue transition-colors duration-300">
+                            Cybersecurity</h3>
+                        <p class="text-white/40 text-sm leading-relaxed mb-6">Network security analysis, penetration
+                            testing, vulnerability assessment, and building secure systems. Exploring offensive and
+                            defensive security practices.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-badge">Kali Linux</span>
+                            <span class="tech-badge">Wireshark</span>
+                            <span class="tech-badge">Nmap</span>
+                            <span class="tech-badge">Python</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 text-neon-blue text-sm font-medium group-hover:gap-4 transition-all duration-300">
+                            Explore Projects <i class='bx bx-right-arrow-alt text-lg'></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+       CONTACT SECTION
+       ═══════════════════════════════════════════ -->
+    <section id="contact" class="relative py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="reveal-left section-title mb-2">Contact <span>Me</span></h2>
+                    <h4 class="reveal-left text-xl text-neon-cyan/80 font-display font-medium mb-6">Let's Work Together
+                    </h4>
+                    <p class="reveal-left text-white/50 text-base leading-relaxed mb-10">
+                        Let us join forces, combine our creativity, skills, and passion, and turn ideas into something
+                        truly extraordinary.
+                        Together, we can bring visions to life and make an impact!
+                    </p>
+
+                    <div class="reveal-left space-y-4 mb-10">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-11 h-11 flex items-center justify-center rounded-xl bg-neon-cyan/10 text-neon-cyan text-lg">
+                                <i class='bx bxs-send'></i>
+                            </div>
+                            <span class="text-white/60 text-sm">Tristhancabrera2@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-11 h-11 flex items-center justify-center rounded-xl bg-neon-cyan/10 text-neon-cyan text-lg">
+                                <i class='bx bx-phone'></i>
+                            </div>
+                            <span class="text-white/60 text-sm">09954039571</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="reveal-left flex items-center gap-3">
+                        <a href="https://www.facebook.com/trsthncabrera" target="_blank" rel="noopener"
+                            class="w-11 h-11 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-white/60 hover:text-neon-cyan hover:border-neon-cyan/40 hover:shadow-neon transition-all duration-300">
+                            <i class='bx bxl-facebook-circle text-lg'></i>
+                        </a>
+                        <a href="https://www.instagram.com/x.gaijin/#" target="_blank" rel="noopener"
+                            class="w-11 h-11 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-white/60 hover:text-neon-cyan hover:border-neon-cyan/40 hover:shadow-neon transition-all duration-300">
+                            <i class='bx bxl-instagram text-lg'></i>
+                        </a>
+                        <a href="https://github.com/x-Gaijin" target="_blank" rel="noopener"
+                            class="w-11 h-11 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-white/60 hover:text-neon-cyan hover:border-neon-cyan/40 hover:shadow-neon transition-all duration-300">
+                            <i class='bx bxl-github text-lg'></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@goofykid_tristhan" target="_blank" rel="noopener"
+                            class="w-11 h-11 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-white/60 hover:text-neon-cyan hover:border-neon-cyan/40 hover:shadow-neon transition-all duration-300">
+                            <i class='bx bxl-tiktok text-lg'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="reveal-right glass-panel p-8 md:p-10">
+                    <form id="contact-form" class="space-y-5">
+                        <div class="relative">
+                            <input type="text" id="contact-name" placeholder=" " required class="input-glow peer" />
+                            <label for="contact-name"
+                                class="absolute left-5 top-4 text-white/30 text-sm transition-all duration-300 pointer-events-none peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-neon-cyan peer-[:not(:placeholder-shown)]:-translate-y-6 peer-[:not(:placeholder-shown)]:text-xs">Your
+                                Name</label>
+                        </div>
+                        <div class="relative">
+                            <input type="email" id="contact-email" placeholder=" " required class="input-glow peer" />
+                            <label for="contact-email"
+                                class="absolute left-5 top-4 text-white/30 text-sm transition-all duration-300 pointer-events-none peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-neon-cyan peer-[:not(:placeholder-shown)]:-translate-y-6 peer-[:not(:placeholder-shown)]:text-xs">Your
+                                Email</label>
+                        </div>
+                        <div class="relative">
+                            <input type="text" id="contact-subject" placeholder=" " class="input-glow peer" />
+                            <label for="contact-subject"
+                                class="absolute left-5 top-4 text-white/30 text-sm transition-all duration-300 pointer-events-none peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-neon-cyan peer-[:not(:placeholder-shown)]:-translate-y-6 peer-[:not(:placeholder-shown)]:text-xs">Subject</label>
+                        </div>
+                        <div class="relative">
+                            <textarea id="contact-message" rows="5" placeholder=" " required
+                                class="input-glow peer resize-none"></textarea>
+                            <label for="contact-message"
+                                class="absolute left-5 top-4 text-white/30 text-sm transition-all duration-300 pointer-events-none peer-focus:-translate-y-6 peer-focus:text-xs peer-focus:text-neon-cyan peer-[:not(:placeholder-shown)]:-translate-y-6 peer-[:not(:placeholder-shown)]:text-xs">Your
+                                Message</label>
+                        </div>
+                        <button type="submit" id="contact-submit" class="btn-neon w-full justify-center">
+                            <i class='bx bx-send'></i>
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="relative border-t border-white/[0.05] py-8">
+        <div
+            class="max-w-full mx-auto px-6 lg:px-16 xl:px-24 flex flex-col md:flex-row items-center justify-center gap-4">
+            <p class="text-white/30 text-sm">Developed by <span class="text-neon-cyan/60">Tristhan Cabrera</span> © 2026
+            </p>
+            <a href="#home"
+                class="w-10 h-10 flex items-center justify-center rounded-xl bg-neon-cyan/10 border border-neon-cyan/20 text-neon-cyan hover:bg-neon-cyan hover:text-deep-space transition-all duration-300">
+                <i class='bx bx-up-arrow-alt text-lg'></i>
+            </a>
+        </div>
+    </footer>
+
+
+    <!-- ═══ AI CHAT PANEL (injected by ChatPanel.js) ═══ -->
+    <div id="chat-root"></div>
+
+
+    <!-- ═══ ENTRY POINT ═══ -->
+    <script type="module" src="./main.js"></script>
+
+</body>
+
+</html>

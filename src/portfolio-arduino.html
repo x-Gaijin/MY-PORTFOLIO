@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Tristhan Cabrera — Arduino & IoT Projects. Embedded systems, sensor integration, and wireless communication." />
+    <title>Arduino & IoT · Tristhan Cabrera</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-deep-space text-white font-sans">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="category-hero">
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-neon-violet/5 rounded-full blur-[200px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-neon-cyan/5 rounded-full blur-[150px] pointer-events-none">
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+            <a href="./index.html#portfolio" class="back-btn mb-8">
+                <i class='bx bx-arrow-back'></i> Back to Portfolio
+            </a>
+            <div class="flex items-center gap-3 mb-4">
+                <div
+                    class="w-14 h-14 flex items-center justify-center rounded-2xl bg-neon-violet/10 border border-neon-violet/20 text-neon-violet text-2xl">
+                    <i class='bx bx-microchip'></i>
+                </div>
+                <div
+                    class="flex items-center gap-2 px-3 py-1 rounded-full bg-neon-violet/5 border border-neon-violet/20 text-neon-violet text-xs font-mono tracking-wider">
+                    <span class="w-1.5 h-1.5 rounded-full bg-neon-violet animate-pulse"></span>
+                    ARDUINO & IoT
+                </div>
+            </div>
+            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
+                <span class="text-white">Arduino</span>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-neon-violet via-neon-blue to-neon-cyan">
+                    & IoT</span>
+            </h1>
+            <p class="text-white/50 text-lg md:text-xl max-w-3xl leading-relaxed">
+                Building embedded systems and IoT solutions with Arduino, ESP32, and various sensors.
+                From circuit prototyping to wireless communication, these projects showcase
+                hardware-software integration for real-world automation and monitoring.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══ PROJECTS ═══ -->
+    <section class="relative py-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid"></div>
+        </div>
+    </section>
+
+    <footer class="relative border-t border-white/[0.05] py-8">
+        <div
+            class="max-w-full mx-auto px-6 lg:px-16 xl:px-24 flex flex-col md:flex-row items-center justify-center gap-4">
+            <p class="text-white/30 text-sm">Developed by <span class="text-neon-cyan/60">Tristhan Cabrera</span> © 2026
+            </p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import './styles/main.css';
+        import { renderProjectCards, initPortfolioPage } from './modules/PortfolioPage.js';
+
+        const projects = [
+            {
+                title: 'Smart Home Automation Hub',
+                description: 'ESP32-based smart home controller with WiFi connectivity, multi-sensor monitoring (temperature, humidity, motion), and mobile app integration via MQTT protocol.',
+                thumbnail: './assets/ARDUINO.jpg',
+                tech: ['ESP32', 'C++', 'MQTT', 'WiFi'],
+                features: ['Multi-sensor data aggregation', 'MQTT protocol for real-time communication', 'OTA firmware updates', 'Power-efficient deep sleep modes'],
+                images: ['./assets/ARDUINO.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'Line-Following Robot',
+                description: 'Arduino-powered autonomous robot using IR sensor arrays for precise line tracking. Implements PID control for smooth navigation on complex track layouts.',
+                thumbnail: './assets/ARDUINO.jpg',
+                tech: ['Arduino Uno', 'C++', 'IR Sensors', 'L298N'],
+                features: ['PID control algorithm for smooth tracking', '5-sensor IR array for accuracy', 'Adjustable speed via PWM', 'Battery monitoring and auto-stop'],
+                images: ['./assets/ARDUINO.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'Weather Station',
+                description: 'Solar-powered weather monitoring station with real-time data logging to cloud. Measures temperature, humidity, pressure, UV index, and wind speed.',
+                thumbnail: './assets/ARDUINO.jpg',
+                tech: ['ESP32', 'BME280', 'Solar Panel', 'ThingSpeak'],
+                features: ['Solar-powered with battery backup', 'Cloud data logging via ThingSpeak', 'OLED display for local readings', 'Historical data graphing'],
+                images: ['./assets/ARDUINO.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'Bluetooth Controlled Arm',
+                description: 'Robotic arm controlled via Bluetooth from a custom Android app. Features 4 degrees of freedom with servo motors and precise position memory.',
+                thumbnail: './assets/ARDUINO.jpg',
+                tech: ['Arduino Mega', 'HC-05', 'Servo Motors', 'Android'],
+                features: ['4-DOF articulated arm design', 'Bluetooth control with HC-05 module', 'Position memory for saved movements', 'Custom Android control app'],
+                images: ['./assets/ARDUINO.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'GPS Tracker with GSM Alert',
+                description: 'Vehicle tracking device using GPS module and GSM for real-time location reporting. Sends SMS alerts for geofence breaches and provides web dashboard for monitoring.',
+                thumbnail: './assets/ARDUINO.jpg',
+                tech: ['Arduino Nano', 'NEO-6M GPS', 'SIM800L', 'GSM'],
+                features: ['Real-time GPS tracking', 'SMS alerts for geofence violations', 'Web dashboard integration', 'Low-power sleep mode for battery life'],
+                images: ['./assets/ARDUINO.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+            {
+                title: 'Automated Plant Watering System',
+                description: 'IoT-enabled plant care system with soil moisture sensors, automated irrigation, and remote monitoring. Adapts watering schedule based on real-time soil conditions.',
+                thumbnail: './assets/ARDUINO.jpg',
+                tech: ['ESP8266', 'Soil Sensor', 'Relay Module', 'Blynk'],
+                features: ['Soil moisture-based automation', 'Remote monitoring via Blynk app', 'Configurable watering thresholds', 'Water tank level monitoring'],
+                images: ['./assets/ARDUINO.jpg'],
+                github: 'https://github.com/x-Gaijin',
+            },
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjectCards(projects, 'projects-grid');
+            initPortfolioPage();
+        });
+    </script>
+</body>
+
+</html>
