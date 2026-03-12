@@ -548,9 +548,12 @@ export function initChatPanel() {
 
     vadWs.onclose = () => {
       console.log('[VAD-WS] Connection closed');
-      if (isVADActive && vadReconnectAttempts < VAD_MAX_RECONNECT) {
+      setStatus('offline');
+      // Reconnect if the panel is still open (not just when VAD mic is active)
+      if (isOpen && vadReconnectAttempts < VAD_MAX_RECONNECT) {
         const delay = Math.min(1000 * 2 ** vadReconnectAttempts, 30000);
         vadReconnectAttempts++;
+        console.log(`[VAD-WS] Reconnecting in ${delay}ms (attempt ${vadReconnectAttempts})`);
         vadReconnectTimeout = setTimeout(connectVADWebSocket, delay);
       }
     };
